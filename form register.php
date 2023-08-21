@@ -54,22 +54,23 @@
         
         <label for="email">Email:</label>
         <input type="email" id="email" name="email"><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Password" required><br>
         
         <input type="submit" value="Submit">
 
         <a href="https://www.example.com">Visit Example.com</a>
     </form>
 
-    <h2>Register</h2>
-    <form method="POST" action="register.php">
+    <form method="GET" action="index.php">
         <label for="name">Name:</label>
-        <input type="text" name="username" placeholder="Username" required><br>
+        <input type="text" id="name" name="name"><br>
+        
         <label for="email">Email:</label>
-        <input type="email" name="email" placeholder="Email" required><br>
-        <label for="password">Password:</label>
-        <input type="password" name="password" placeholder="Password" required><br>
-        <input type="submit" value="Register">
-        <br><a href="https://www.example.com">Visit Example.com</a>
+        <input type="email" id="email" name="email"><br>
+        
+        <input type="submit" value="Submit">
     </form>
 </body>
 </html>
