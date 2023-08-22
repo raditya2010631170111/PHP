@@ -7,7 +7,9 @@
 ## Description
 
 Laravel 4 Library for calling http://freegeoip.net/ API.
+
 In contrast to all other packages wherein it requires that you have the geoip database in your filesystem, this library calls a free service. So you don't really have to worry about downloading and maintaining geoip data from Maxmind on your own server.
+
 Just install the package, add the config, and it is ready to use!
 
 ## Requirements
@@ -36,6 +38,7 @@ Get country of the visitor
 ## Credit
 
 Ini adalah struktur folder yang terdapat dalam project ini:
+```bash
 |-- public_html
 |   |-- css
 |   |   |-- **/*.css
@@ -54,3 +57,4 @@ Ini adalah struktur folder yang terdapat dalam project ini:
 |-- package.json
 |-- bower.json (if using bower)
 |-- .gitignore
+```
