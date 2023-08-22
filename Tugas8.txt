@@ -1,0 +1,129 @@
+Ini tugas saya
+
+Ketentuan program:
+1. Tampilan dibuat dengan menggunakan Bootstrap sebagai library
+2. Data rute penerbangan, baik yang lama maupun yang baru diinput harus tampil di dalam
+tabel Daftar Rute Penerbangan, yang merupakan hasil pembacaan dari file “data.json”
+(data.json disediakan)
+3. Ketentuan tarif pajak sebagai berkut:
+a. Sumber pajak berasal dari bandara asal dan bandara tujuan
+b. Masing-masing bandara mempunyai tarif pajak tersendiri
+c. Total pajak diambil dari jumlah pajak bandara asal dan bandara tujuan
+d. Berikut rincian pajak masing-masing bandara
+
+rinciannya berupa tabel:
+tabel 1:
+Column Header 1	"No"
+Column Header 2	"Bandara Asal"
+Column Header 3 "Pajak"
+Data Row 1, Col 1	"1"
+Data Row 1, Col 2	"Soekarno-Hatta (CGK)"
+Data Row 1, Col 3	"50000"
+Data Row 2, Col 1	"2"
+Data Row 2, Col 2	"Husein Sastranegara (BDO)"
+Data Row 2, Col 3   "30000"
+Data Row 3, Col 1	"3"
+Data Row 3, Col 2	"Abdul Rachman Saleh (MLG)"
+Data Row 3, Col 3   "40000"
+Data Row 4, Col 1	"4"
+Data Row 4, Col 2	"Juanda (SUB)"
+Data Row 4, Col 3   "40000"
+
+tabel 2:
+Column Header 1	"No"
+Column Header 2	"Bandara Tujuan"
+Column Header 3 "Pajak"
+Data Row 1, Col 1	"1"
+Data Row 1, Col 2	"Ngurah Rai (DPS)
+Data Row 1, Col 3	"80000"
+Data Row 2, Col 1	"2"
+Data Row 2, Col 2	"Hasanuddin (UPG)"
+Data Row 2, Col 3   "70000"
+Data Row 3, Col 1	"3"
+Data Row 3, Col 2	"Inanwatan (INX)"
+Data Row 3, Col 3   "90000"
+Data Row 4, Col 1	"4"
+Data Row 4, Col 2	"Sultan Iskandarmuda (BTJ)"
+Data Row 4, Col 3   "70000"
+4. Program dibuat dengan menggunakan fungsi/prosedur
+5. Program dibuat dengan menggunakan array
+6. Data yang baru saja diinputkan, akan tampil berdasarkan urutan abjad pada table Daftar
+Rute Tersedia (sort)
+7. Untuk pengorganisasian file dan folder yang rapi, maka semua file gambar harus dimasukkan
+ke folder ”gambar”, semua file library/Bootstrap harus dimasukkan ke folder ”library”, dan
+semua file data harus dimasukkan ke folder ”data”
+8. Source code ditulis dengan menerapkan coding guidelines dan best practice serta dilengkapi
+dengan komentar yang jelas pada badan source code
+9. Untuk memudahkan penggunaan, harus dibuat juga file README yang setidaknya berisi
+penjelasan program dan hierarki file dan folder dari website ini
+10. Tampilan website bebas sekreatif mungkin dengan perkiraan tampilan seperti berikut:
+
+//heading 1, align center
+Pendaftaran Rute Penerbangan 
+
+Maskapai :
+Bandara Asal : 
+Bandara Tujuan :
+Harga Tiket :
+
+//button align center, bg color green
+button Submit
+
+//setelah button diklik, menampilkan
+//heading 1, align center
+Daftar Rute Tersedia
+sebuah Table
+
+<!-- isi sebuah table itu ada di file .json ini, begini cara bacanya:
+"Adam Air" -> Maskapai
+"Soekarno-Hatta (CGK)" -> Bandara Asal
+"Sultan Iskandarmuda (BTJ)" -> Bandara Tujuan
+"2000000" -> Harga Tiket
+120000 -> Pajak
+2120000 -> Total Harga Tiket
+
+jadi ada enam Column Header
+-->
+
+[
+    [
+        "Adam Air",
+        "Soekarno-Hatta (CGK)",
+        "Sultan Iskandarmuda (BTJ)",
+        "2000000",
+        120000,
+        2120000
+    ],
+    [
+        "Batik",
+        "Husein Sastranegara (BDO)",
+        "Sultan Iskandarmuda (BTJ)",
+        "100000",
+        100000,
+        200000
+    ],
+    [
+        "Batik",
+        "Soekarno-Hatta (CGK)",
+        "Hasanuddin (UPG)",
+        "890000",
+        120000,
+        1010000
+    ],
+    [
+        "Citilink",
+        "Soekarno-Hatta (CGK)",
+        "Sultan Iskandarmuda (BTJ)",
+        "89000",
+        120000,
+        209000
+    ],
+    [
+        "Garuda Indonesia",
+        "Soekarno-Hatta (CGK)",
+        "Ngurah Rai (DPS)",
+        1500000,
+        130000,
+        1630000
+    ]
+]

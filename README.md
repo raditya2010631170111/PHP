@@ -39,22 +39,22 @@ Get country of the visitor
 
 Ini adalah struktur folder yang terdapat dalam project ini:
 ```bash
-|-- public_html
-|   |-- css
-|   |   |-- **/*.css
-|	|-- favicon.ico
-|	|-- images
-|   |   |-- **/*.png
-|	|-- js
-|   |   |-- **/*.js
-|	|-- index.php
-|-- resource
-|   |-- config.php 
-|   |-- library 
-|   |-- template
-|-- Gruntfile.js/gulpfile.js
-|-- README.md
-|-- package.json
-|-- bower.json (if using bower)
-|-- .gitignore
+ ┣ public_html
+ ┃ ┣ css
+ ┃ ┃ ┣ **/*.css
+ ┃ ┣ favicon.ico
+ ┃ ┣ images
+ ┃ ┃ ┣ **/*.png
+ ┃ ┣ js
+ ┃ ┃ ┣ **/*.js
+ ┃ ┣ index.php
+ ┣ resource
+ ┃ ┣ config.php 
+ ┃ ┣ library 
+ ┃ ┣ template
+ ┣ Gruntfile.js/gulpfile.js
+ ┣ README.md
+ ┣ package.json
+ ┣ bower.json (if using bower)
+ ┣ .gitignore
 ```
