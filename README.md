@@ -12,7 +12,7 @@ In contrast to all other packages wherein it requires that you have the geoip da
 
 Just install the package, add the config, and it is ready to use!
 
-## Requirements
+# Requirements
 
 - PHP >= 5.3.7
 - CURL Extension
@@ -36,9 +36,13 @@ Facade
 Get country of the visitor
 
 ## Credit
+- [IG](https://www.instagram.com/carli_to_udin/?hl=id) Carudin
+- [FB](https://www.facebook.com/carli.t.udin) Carudin
+- [Youtube](https://studio.youtube.com/channel/UCxraAKSPET2IcCQ6XCvuswQ/videos/upload?filter=%5B%5D&sort=%7B%22columnType%22%3A%22date%22%2C%22sortOrder%22%3A%22DESCENDING%22%7D)
 
-Ini adalah struktur folder yang terdapat dalam project ini:
+# Structure Folder
 ```bash
+jwd
  ┣ public_html
  ┃ ┣ css
  ┃ ┃ ┣ **/*.css
