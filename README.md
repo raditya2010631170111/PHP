@@ -36,9 +36,9 @@ Facade
 Get country of the visitor
 
 ## Credit
-- [IG](https://www.instagram.com/carli_to_udin/?hl=id) Carudin
-- [FB](https://www.facebook.com/carli.t.udin) Carudin
-- [Youtube](https://studio.youtube.com/channel/UCxraAKSPET2IcCQ6XCvuswQ/videos/upload?filter=%5B%5D&sort=%7B%22columnType%22%3A%22date%22%2C%22sortOrder%22%3A%22DESCENDING%22%7D)
+<a href="https://twitter.com/ajiradits">
+  <img align="left" alt="Anurag Hazra | Twitter" width="21px" src="https://raw.githubusercontent.com/anuraghazra/anuraghazra/master/assets/twitter.svg" />
+</a>
 
 # Structure Folder
 ```bash
