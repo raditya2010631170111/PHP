@@ -19,19 +19,23 @@ Just install the package, add the config, and it is ready to use!
 
 ```bash
 composer require buonzz/laravel-4-freegeoip:dev-master
-
-//Add the service provider and facade in your config/app.php //this is instruction in readme not for you to do
-
+```
+Add the service provider and facade in your config/app.php
 Service Provider
+```bash
 Buonzz\GeoIP\Laravel4\ServiceProviders\GeoIPServiceProvider::class
-
-'GeoIP' => 'Buonzz\GeoIP\Laravel4\Facades\GeoIP',
+```
 Facade
+```bash
+'GeoIP'			 => 'Buonzz\GeoIP\Laravel4\Facades\GeoIP',
+```
 
-Usage
+## Usage
 Get country of the visitor
 
-Credit
+## Credit
+
+Ini adalah struktur folder yang terdapat dalam project ini:
 |-- public_html
 |   |-- css
 |   |   |-- **/*.css
