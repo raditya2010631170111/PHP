@@ -2,19 +2,56 @@
 echo "<h1>Hello, PHP!</h1>";
 
 // Variables=wadah and Data Types, case-sensitive=huruf kecil, besar
-$heat = 25;      // Integer variable
+$heat = 25;      // Integer variable //echo {$heat};
 $_height2 = 1.75; // Float variable
 $noValue = null; //null
-$colors = array("red", "green", "blue"); // Array
+$colors = array("red", "green", "blue"); // Array echo $colors[0];
+
+$colors = array("Red", "Green", "Blue", "Yellow"); // Array echo $colors[0];
+foreach ($colors as $color) { //foreach L.
+    // echo "$color<br>";
+}
+
 // Associative Array
 $person = array(
     "name" => "Alice",
     "age" => 30,
     "isStudent" => false
 );
+echo "Name: " . $person["name"] . "<br>";
+echo "Age: " . $person["age"] . "<br>";
+echo "Is Student: " . ($person["isStudent"] ? "Yes" : "No") . "<br>";
+
+//multi dimension
+$students = array(
+    array("name" => "Alice", "age" => 20),
+    array("name" => "Bob", "age" => 22),
+    array("name" => "Charlie", "age" => 21)
+);
+echo "Name of the first student: " . $students[0]["name"] . "<br>"; // Concatenate 
+echo "Age of the second student: " . $students[1]["age"] . "<br>";
+
+$mixedArray = array(
+    "person" => array(
+        "name" => "Alice",
+        "age" => 30,
+        "isStudent" => false
+    ),
+    "students" => array(
+        array("name" => "Bob", "age" => 22),
+        array("name" => "Charlie", "age" => 21)
+    )
+);
+echo "Name: " . $mixedArray["person"]["name"] . "<br>";
+echo "Age: " . $mixedArray["person"]["age"] . "<br>";
+echo "Is Student: " . ($mixedArray["person"]["isStudent"] ? "Yes" : "No") . "<br>";
+
+echo "Name of the first student: " . $mixedArray["students"][0]["name"] . "<br>";
+echo "Age of the second student: " . $mixedArray["students"][1]["age"] . "<br>";
 
 $firstName = "Alice";  // String variable
 $lastName = "Einzbern";
+$fullName = "{$firstName} {$lastName}";
 
 // Operators and Expressions //Arithmetic
 $ac = 10 - 4;   // Subtraction
@@ -49,19 +86,38 @@ $booleanValue = (bool)$number; // Convert to boolean
 // Functions
 function greet($firstName, $lastName) {
     echo "<table style='border-collapse: collapse;'>";
-    echo "<tr><td style='border: 1px solid black;padding:5px'>Hello, $firstName $lastName, "; // echo "Hello, " . $firstName . " " . $lastName . ", "; // Concatenate Operator = $firstName . " " . $lastName
+    echo "<tr><td style='border: 1px solid black;padding:5px'>Hello, $firstName $lastName, ";
 }
 greet($firstName, $lastName);
     
-// Control Structures
+// Control Structures L.
 if ($temperature > 25) { //greaterThan
     echo "it's a hot day!<br>";
-} else if ($temperature < 25) { //lessThan
+} elseif ($temperature < 25) { //lessThan
     echo "It's not too hot.<br>";
 } else {
     echo "It's a pleasant day.<br>";
 }
 echo "</td></tr></table>";
+
+$day = "Wednesday";
+switch ($day) {
+    case "Monday":
+    case "Tuesday":
+    case "Wednesday":
+    case "Thursday":
+    case "Friday":
+        echo "It's a regular weekday.";
+        break;
+    case "Saturday":
+    case "Sunday":
+        echo "It's the weekend!";
+        break;
+    default:
+        echo "Invalid day.";
+        break;
+}
+//It's a regular weekday.
 
 //Ternary
 $score1 = 85;
@@ -92,14 +148,13 @@ if (isset($_GET['name']) && isset($_GET['email'])) {
 
 <!--  Full-Stack = databases (MySQL, PostgreSQL), php/python (server-side) (Back-End)=scripting-manage: html, css, js (client-side=tampil di web) (Front-End)
 eksekusi source code=tampil ke web
-xampp 1) check .php files 2) from open>close tag
 akses=kita client - server - php 
+mekanisme eksekusi code: xampp 1) check .php files 2) from open>close tag
+langkah eksekusi: xampp>apache /xampp/htdocs/php/index.php http://localhost/php/index.php
+running=berhasil eksekusi, debugging=fix error eksekusi, executable file=php >
 
-parse e.=misplaced parentheses, semicolons, quotes, or brackets. - fatal e.=redeclare a function or class/incorrect syntax/false call
-eksekusi jalan = notice=var, unused library, warning e.=non-existent file/deprecated functions
-
-xampp>apache
-/xampp/htdocs/php/index.php http://localhost/php/index.php
+parse E.=misplaced parentheses, semicolons, quotes, or brackets. - fatal E.=redeclare a function or class/incorrect syntax/false call
+eksekusi jalan = notice=var, unused library, warning E.=non-existent file/deprecated functions
 
 xampp>mysql
 http://localhost/phpmyadmin
@@ -107,4 +162,7 @@ http://localhost/phpmyadmin
 
 AND OR
 username or email
+
+Aplikasi Mockup: Figma, Pencil Project
+implementasi UI - drag & drop: Dreamweaver, Google Web Designer
 -->
