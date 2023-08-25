@@ -106,7 +106,7 @@
 			$totalTagihan = $hargaOngkir + $tagihanAwal;
 			
 			//	Variabel berisi path file data.json yang digunakan untuk menyimpan data pemesanan.
-			$berkas = "data.json";
+			$berkas = "data/data.json";
 			
 			//	Mengubah data pemesanan yang berbentuk array PHP menjadi bentuk JSON.
 			$dataJson = file_get_contents($berkas);

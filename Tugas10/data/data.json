@@ -1,8 +1,17 @@
 [
     {
-        "nama": null,
-        "noHP": null,
-        "jumlahPesanan": 0,
-        "lokasi": null,
-    },
+        "nama": "RADITYA AJI SASMOYO",
+        "noHP": "081290264815",
+        "jumlahPesanan": "2",
+        "lokasi": "Bekasi",
+        "tagihanAwal": 180000,
+        "ongkir": {
+            "Jakarta": 0,
+            "Bogor": 10000,
+            "Depok": 0,
+            "Tangerang": 5000,
+            "Bekasi": 0
+        },
+        "totalTagihan": 180000
+    }
 ]
