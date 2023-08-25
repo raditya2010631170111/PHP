@@ -1,0 +1,237 @@
+[
+    {
+        "nama": "RADITYA AJI SASMOYO",
+        "noHP": "081290264815",
+        "jumlahPesanan": "1",
+        "lokasi": "Jakarta",
+        "tagihanAwal": null,
+        "ongkir": null,
+        "totalTagihan": null
+    },
+    {
+        "nama": "RADITYA AJI SASMOYO",
+        "noHP": "081290264815",
+        "jumlahPesanan": "1",
+        "lokasi": "Jakarta",
+        "tagihanAwal": 0,
+        "ongkir": {
+            "Jakarta": 0,
+            "Bogor": 10000,
+            "Depok": 0,
+            "Tangerang": 5000,
+            "Bekasi": 0
+        },
+        "totalTagihan": 0
+    },
+    {
+        "nama": "RADITYA AJI SASMOYO",
+        "noHP": "081290264815",
+        "jumlahPesanan": "1",
+        "lokasi": "Jakarta",
+        "tagihanAwal": 0,
+        "ongkir": {
+            "Jakarta": 0,
+            "Bogor": 10000,
+            "Depok": 0,
+            "Tangerang": 5000,
+            "Bekasi": 0
+        },
+        "lamasewa": null,
+        "totalTagihan": 0
+    },
+    {
+        "nama": "RADITYA AJI SASMOYO",
+        "noHP": "081290264815",
+        "jumlahPesanan": "1",
+        "lokasi": "Jakarta",
+        "tagihanAwal": 0,
+        "ongkir": {
+            "Jakarta": 0,
+            "Bogor": 10000,
+            "Depok": 0,
+            "Tangerang": 5000,
+            "Bekasi": 0
+        },
+        "totalTagihan": 0
+    },
+    {
+        "nama": "RADITYA AJI SASMOYO",
+        "noHP": "081290264815",
+        "jumlahPesanan": "1",
+        "lokasi": "Jakarta",
+        "tagihanAwal": 0,
+        "ongkir": {
+            "Jakarta": 0,
+            "Bogor": 10000,
+            "Depok": 0,
+            "Tangerang": 5000,
+            "Bekasi": 0
+        },
+        "totalTagihan": 0
+    },
+    {
+        "nama": "RADITYA AJI SASMOYO",
+        "noHP": "081290264815",
+        "jumlahPesanan": "1",
+        "lokasi": "Jakarta",
+        "tagihanAwal": 0,
+        "ongkir": {
+            "Jakarta": 0,
+            "Bogor": 10000,
+            "Depok": 0,
+            "Tangerang": 5000,
+            "Bekasi": 0
+        },
+        "totalTagihan": 0
+    },
+    {
+        "nama": "RADITYA AJI SASMOYO",
+        "noHP": "081290264815",
+        "jumlahPesanan": "1",
+        "lokasi": "Jakarta",
+        "tagihanAwal": 0,
+        "ongkir": {
+            "Jakarta": 0,
+            "Bogor": 10000,
+            "Depok": 0,
+            "Tangerang": 5000,
+            "Bekasi": 0
+        },
+        "totalTagihan": 0
+    },
+    {
+        "nama": "RADITYA AJI SASMOYO",
+        "noHP": "081290264815",
+        "jumlahPesanan": "1",
+        "lokasi": "Jakarta",
+        "tagihanAwal": 0,
+        "ongkir": {
+            "Jakarta": 0,
+            "Bogor": 10000,
+            "Depok": 0,
+            "Tangerang": 5000,
+            "Bekasi": 0
+        },
+        "totalTagihan": 0
+    },
+    {
+        "nama": "RADITYA AJI SASMOYO",
+        "noHP": "081290264815",
+        "jumlahPesanan": "1",
+        "lokasi": "Jakarta",
+        "tagihanAwal": 0,
+        "ongkir": {
+            "Jakarta": 0,
+            "Bogor": 10000,
+            "Depok": 0,
+            "Tangerang": 5000,
+            "Bekasi": 0
+        },
+        "totalTagihan": 0
+    },
+    {
+        "nama": "RADITYA AJI SASMOYO",
+        "noHP": "081290264815",
+        "jumlahPesanan": "1",
+        "lokasi": "Jakarta",
+        "tagihanAwal": 0,
+        "ongkir": {
+            "Jakarta": 0,
+            "Bogor": 10000,
+            "Depok": 0,
+            "Tangerang": 5000,
+            "Bekasi": 0
+        },
+        "totalTagihan": 0
+    },
+    {
+        "nama": "RADITYA AJI SASMOYO",
+        "noHP": "081290264815",
+        "jumlahPesanan": "1",
+        "lokasi": "Jakarta",
+        "tagihanAwal": 0,
+        "ongkir": {
+            "Jakarta": 0,
+            "Bogor": 10000,
+            "Depok": 0,
+            "Tangerang": 5000,
+            "Bekasi": 0
+        },
+        "totalTagihan": 0
+    },
+    {
+        "nama": "RADITYA AJI SASMOYO",
+        "noHP": "081290264815",
+        "jumlahPesanan": "1",
+        "lokasi": "Jakarta",
+        "tagihanAwal": 0,
+        "ongkir": {
+            "Jakarta": 0,
+            "Bogor": 10000,
+            "Depok": 0,
+            "Tangerang": 5000,
+            "Bekasi": 0
+        },
+        "totalTagihan": 0
+    },
+    {
+        "nama": "RADITYA AJI SASMOYO",
+        "noHP": "081290264815",
+        "jumlahPesanan": "1",
+        "lokasi": "Jakarta",
+        "tagihanAwal": 0,
+        "ongkir": {
+            "Jakarta": 0,
+            "Bogor": 10000,
+            "Depok": 0,
+            "Tangerang": 5000,
+            "Bekasi": 0
+        },
+        "totalTagihan": 0
+    },
+    {
+        "nama": "RADITYA AJI SASMOYO",
+        "noHP": "081290264815",
+        "jumlahPesanan": "1",
+        "lokasi": "Bogor",
+        "tagihanAwal": 0,
+        "ongkir": {
+            "Jakarta": 0,
+            "Bogor": 10000,
+            "Depok": 0,
+            "Tangerang": 5000,
+            "Bekasi": 0
+        },
+        "totalTagihan": 0
+    },
+    {
+        "nama": "RADITYA AJI SASMOYO",
+        "noHP": "081290264815",
+        "jumlahPesanan": "1",
+        "lokasi": "Jakarta",
+        "tagihanAwal": 0,
+        "ongkir": {
+            "Jakarta": 0,
+            "Bogor": 10000,
+            "Depok": 0,
+            "Tangerang": 5000,
+            "Bekasi": 0
+        },
+        "totalTagihan": 0
+    },
+    {
+        "nama": "RADITYA AJI SASMOYO",
+        "noHP": "081290264815",
+        "jumlahPesanan": "1",
+        "lokasi": "Jakarta",
+        "tagihanAwal": 0,
+        "ongkir": {
+            "Jakarta": 0,
+            "Bogor": 10000,
+            "Depok": 0,
+            "Tangerang": 5000,
+            "Bekasi": 0
+        },
+        "totalTagihan": 0
+    }
+]

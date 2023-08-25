@@ -1,6 +1,7 @@
 <?php
-// Membuat report kalau Error
+// Memulai sesi
 session_start();
+// Membuat report kalau Error
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 

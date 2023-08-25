@@ -1,0 +1,30 @@
+[
+    {
+        "nmpenyewa": "Muslifah",
+        "notelp": "0812434534",
+        "kendaraan": "Vios",
+        "lamasewa": "5",
+        "hargasewa": 10000000
+    },
+    {
+        "nmpenyewa": "aaa",
+        "notelp": "4523",
+        "kendaraan": "Vios",
+        "lamasewa": "1",
+        "hargasewa": 200000
+    },
+    {
+        "nmpenyewa": "aaab",
+        "notelp": "4523",
+        "kendaraan": "Brio",
+        "lamasewa": "2",
+        "hargasewa": 320000
+    },
+    {
+        "nmpenyewa": "aaab",
+        "notelp": "4523",
+        "kendaraan": "Vios",
+        "lamasewa": "6",
+        "hargasewa": 1200000
+    }
+]
