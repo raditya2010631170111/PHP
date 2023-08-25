@@ -38,5 +38,29 @@
         1500000,
         130000,
         1630000
+    ],
+    [
+        "Citilink",
+        "Soekarno-Hatta (CGK)",
+        "Ngurah Rai (DPS)",
+        "100000",
+        130000,
+        230000
+    ],
+    [
+        "Citilink",
+        "Soekarno-Hatta (CGK)",
+        "Sultan Iskandarmuda (BTJ)",
+        "100000",
+        120000,
+        220000
+    ],
+    [
+        "Citilink",
+        "Soekarno-Hatta (CGK)",
+        "Hasanuddin (UPG)",
+        "100000",
+        120000,
+        220000
     ]
 ]
