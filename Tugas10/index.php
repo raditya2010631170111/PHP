@@ -87,8 +87,7 @@
 
 			//	Variabel $tagihanAwal berisi nilai tagihan awal (sebelum ongkir) yang dihitung dengan menggunakan fungsi hitung_tagihan_awal().
 			// $tagihanAwal = hitung_tagihan_awal($dataPesanan['jumlahPesanan'], $hargaSatuan);
-			$jumlah = 0;
-            $tagihanAwal = $hargaSatuan * $jumlah;
+            $tagihanAwal = $hargaSatuan * $jumlahPesanan;
 
 			//	Instruksi Kerja Nomor 9.
 			//	Menghitung ongkos kirim berdasarkan lokasi dengan kontrol percabangan.
@@ -136,7 +135,7 @@
 			});
 			
 			//	Menampilkan data pemesanan dan hasil perhitungan diskon dan tagihan.
-			foreach ($dataPesanan as $ddataPesanan) {
+			foreach ($dataPesanan as $dataPesanan) {
 			echo "
 				<br/>
 				<div class='container'>
@@ -168,7 +167,7 @@
 					<div class='row'>
 						<!-- Menampilkan tarif pemesanan. -->
 						<div class='col-lg-2'>Ongkos Kirim:</div>
-						<div class='col-lg-2'>Rp".number_format($ongkir, 0, ".", ".").",-</div>
+						<div class='col-lg-2'>Rp".number_format($hargaOngkir, 0, ".", ".").",-</div>
 					</div>
 					<div class='row'>
 						<!-- Menampilkan tagihan akhir (setelah diskon). -->
