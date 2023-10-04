@@ -4,7 +4,6 @@ composer create-project codeigniter4/appstarter ci3 --ignore-platform-reqs
 C:\xampp\php\php.ini
 search ;extension=intl ;extension=zip
 change to extension=intl extension=zip
-change to extension=intl extension=zip
 
 CI3 PHP <7.3
 
@@ -16,3 +15,4 @@ php artisan make:migration
 php spark migrate:create Extends
 
 php spark serve
+http://localhost:8080/
