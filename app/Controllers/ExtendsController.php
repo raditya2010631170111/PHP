@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\ProductsModel;
-use CodeIgniter\Controller;
+use App\Controllers\BaseController;
 
 class ExtendsController extends BaseController // Make sure to extend BaseController
 {
