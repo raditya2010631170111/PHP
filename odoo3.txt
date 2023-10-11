@@ -7,6 +7,7 @@ change to extension=intl extension=zip
 
 CI3 PHP <7.3
 
+App\Config\App.php base_url = how to access
 P5 app/Routes use App\Controllers\ExtendsController;
 P6 cd app/Controllers php spark make:controller ExtendsController
 P7 app\Views utama.blade.php, barang.blade.php
