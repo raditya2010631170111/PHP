@@ -6,5 +6,4 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
-$route['profile'] = 'ProfileController';
-$routes->get('profile', 'ProfileController::profile');
+$routes->get('/profile', 'ProfileController::profile');
