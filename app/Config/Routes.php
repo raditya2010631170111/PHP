@@ -6,4 +6,5 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
-$routes->get('/profile', 'ProfileController::profile');
+$routes->get('/home', 'ExtendsController::index');
+$routes->get('/about_us', 'ExtendsController::profile');
