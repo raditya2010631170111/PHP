@@ -73,9 +73,9 @@ Route::group(['prefix' => 'users'], function () {
 	Route::get('/delete/{id}', [ExtendsController::class, 'destroy_user']);
 	Route::get('/myticket', [ExtendsController::class, 'myticket'])->name('admin.myticket'); //Myticket
 	
-	Route::get('/onetoone', [ExtendsController::class,'onetoone']);
-	Route::get('/onetomany', [ExtendsController::class,'onetomany']);
-	Route::get('/manytomany', [ExtendsController::class,'manytomany']);
+	Route::get('/onetooneUsers', [ExtendsController::class,'onetoone']);
+	Route::get('/onetomanyUsers', [ExtendsController::class,'onetomany']);
+	Route::get('/manytomanyUsers', [ExtendsController::class,'manytomany']);
 	
 });
 Route::post('/postLogin', [ExtendsController::class, 'postLogin']);
@@ -147,9 +147,9 @@ Route::group(['prefix' => 'suppliers'], function () {
 	Route::get('/recycle/{id}', [ExtendsController::class,'suppliers_recycle']);
 	Route::get('/edit/{id}', [ExtendsController::class,'suppliers_edit']);
 	Route::get('/{id}/update', [ExtendsController::class,'suppliers_update2']);
-	Route::get('/onetoone', [ExtendsController::class,'onetoone']);
-	Route::get('/onetomany', [ExtendsController::class,'onetomany']);
-	Route::get('/manytomany', [ExtendsController::class,'manytomany']);
+	Route::get('/onetooneSuppliers', [ExtendsController::class,'onetoone']);
+	Route::get('/onetomanySuppliers', [ExtendsController::class,'onetomany']);
+	Route::get('/manytomanySuppliers', [ExtendsController::class,'manytomany']);
 });
 Route::group(['prefix' => 'purchase'], function () {
 	Route::get('/edit1', [ExtendsController::class,'purchase_edit1']);

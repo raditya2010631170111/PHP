@@ -10,7 +10,7 @@ use Illuminate\Queue\Console\RetryCommand;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use App\Models\Transactions;
 use App\Models\Users;
-use App\Models\Playstations;
+use App\Models\Products;
 use App\Models\Feedback;
 use Laracasts\Flash\Flash;
 use App\Exports\PlaystationsExport;
@@ -20,21 +20,17 @@ use Session;
 
 class ExtendsController extends Controller
 {
-	public function index_beranda()
-    {
+	public function index_beranda(){
         return view('/');
     }
 
-    public function halamanadmin()
-    {
+    public function halamanadmin(){
         return view('dashboard');
     }
-    public function halamancustomer()
-    {
+    public function halamancustomer(){
         return view('/');
     }
-    public function index_dashboard()
-    {
+    public function index_dashboard(){
         $playstations = DB::table('playstations')->get()->count();
         $users = DB::table('users')->get()->count();
         $transactions = DB::table('transactions')->get()->count();
@@ -46,18 +42,15 @@ class ExtendsController extends Controller
         ]);
     }
 	
-	public function index_users()
-    {
+	public function index_users(){
         $data = Users::all();
         // dd($data);
         return view('admin.index_users', compact('data'), [
             "title" => "Users"
         ]);
     }
-    public function postLogin(Request $request)
-    {
+    public function postLogin(Request $request){
         // dd($request->all());
-
         if (Auth::attempt($request->only('email', 'password'))) {
             if (Auth::users()->level == 'Admin') {
                 return redirect('dashboard');
@@ -67,21 +60,18 @@ class ExtendsController extends Controller
         }
         return redirect('/login');
     }
-    public function logout(Request $request)
-    {
+    public function logout(Request $request){
         Auth::logout();
         return redirect('/');
     }
 
-    public function regis()
-    {
+    public function regis(){
         return view('admin.signup', [
             "title" => "Signup"
         ]);
     }
 
-    public function postRegis(Request $request)
-    {
+    public function postRegis(Request $request){
         // dd($request->all());
         $validateddata = $request->validate([
             'title' => 'required|max:255',
@@ -94,14 +84,12 @@ class ExtendsController extends Controller
         Users::create($validateddata);
         return redirect('/login')->with('success', 'Data Berhasil Ditambahkan');
     }
-    public function create_users()
-    {
+    public function create_users(){
         return view('admin.create_users', [
             "title" => "Create"
         ]);
     }
-    public function store_users(Request $request)
-    {
+    public function store_users(Request $request){
         // dd($request->all());
         $validateddata = $request->validate([
             'title' => 'required|max:255',
@@ -114,44 +102,38 @@ class ExtendsController extends Controller
         Users::create($validateddata);
         return redirect('/users')->with('success', 'Data Berhasil Ditambahkan');
     }
-    public function edit_users($id)
-    {
+    public function edit_users($id){
         $data = Users::find($id);
         // dd($data);
         return view('admin.edit_users', compact('data'), [
             "title" => "Edit"
         ]);
     }
-    public function update_users(Request $request, $id)
-    {
+    public function update_users(Request $request, $id){
         $data = Users::find($id);
         $data->update($request->all());
 
         return redirect('/users')->with('success', 'Data Berhasil Di Update');
     }
-    public function destroy_users($id)
-    {
+    public function destroy_users($id){
         $data = Users::find($id);
         $data->delete();
         return redirect('/users')->with('success', 'Data Berhasil Di Hapus');
     }
 	
-	public function index_playstations()
-    {
+	public function index_playstations(){
         $data = Playstations::all();
         // dd($data);
         return view('admin.index_playstations', compact('data'), [
             "title" => "Playstations"
         ]);
     }
-    public function create_playstations()
-    {
+    public function create_playstations(){
         return view('admin.create_playstations', [
             "title" => "Create"
         ]);
     }
-    public function store_playstations(Request $request)
-    {
+    public function store_playstations(Request $request){
         $data = Playstations::create($request->all());
         if ($request->hasFile('poster')) {
             $request->file('poster')->move('posterfilm/', $request->file('poster')->getClientOriginalName());
@@ -160,16 +142,14 @@ class ExtendsController extends Controller
         }
         return redirect('/playstations')->with('success', 'Task Created Successfully!');
     }
-    public function show_playstations()
-    {
+    public function show_playstations(){
         $data = Playstations::all();
         // dump($data);
         return view('admin.index_game', compact('data'), [
             'title' => "Movie",
         ]);
     }
-    public function edit_playstations(Request $request, $id)
-    {
+    public function edit_playstations(Request $request, $id){
         $data = Playstations::find($id);
         if ($request->hasFile('poster')) {
             $request->file('poster')->move('posterfilm/', $request->file('poster')->getClientOriginalName());
@@ -180,8 +160,7 @@ class ExtendsController extends Controller
             "title" => "Edit"
         ]);
     }
-    public function update_playstations(Request $request, $id)
-    {
+    public function update_playstations(Request $request, $id){
         $data = Playstations::find($id);
         if ($request->hasFile('poster')) {
             $request->file('poster')->move('posterfilm/', $request->file('poster')->getClientOriginalName());
@@ -192,8 +171,7 @@ class ExtendsController extends Controller
 
         return redirect('/playstations')->with('success', 'Data Berhasil Di Update');
     }
-    public function destroy_playstations($id)
-    {
+    public function destroy_playstations($id){
         $data = Playstations::find($id);
         $data->delete();
         return redirect('/playstations')->with('success', 'Data Berhasil Di Hapus');
@@ -205,8 +183,7 @@ class ExtendsController extends Controller
 	public function export_excel(){
 		return Excel::download(new PlaystationsExport, 'playstations.xlsx');
 	}
-	public function import_excel(Request $request) 
-	{
+	public function import_excel(Request $request) {
 		$this->validate($request, [
 			'file' => 'required|mimes:csv,xls,xlsx'
 		]);
@@ -218,8 +195,7 @@ class ExtendsController extends Controller
 		return redirect('/playstations/playstations');
 	}
 	
-	public function index_game()
-    {
+	public function index_game(){
         $data = Playstations::all();
         return  view('admin.index_game', compact('data'), [
             'populers' => $data = Playstations::where('status', 'Now Playing')->get(),
@@ -228,16 +204,14 @@ class ExtendsController extends Controller
             'title' => "Game",
         ]);
     }
-    public function show(Playstations $game)
-    {
+    public function show(Playstations $game){
         return view('admin.show', [
             'game' => $game,
             'title' => "Game",
         ]);
     }
 	
-	public function index_transactions()
-    {
+	public function index_transactions() {
         $data = Transaction::all();
         // dd($data);
         return view('admin.index_transactions', compact('data'), [
@@ -245,14 +219,12 @@ class ExtendsController extends Controller
             "title" => "Transaction"
         ]);
     }
-    public function create_transactions()
-    {
+    public function create_transactions(){
         return view('admin.show', [
             "title" => "Create"
         ]);
     }
-    public function store_transactions(Request $request)
-    {
+    public function store_transactions(Request $request){
         // dd($request->all());
         $transactions = new Transaction;
         $transactions->users_id = Auth::users()->id;
@@ -265,46 +237,40 @@ class ExtendsController extends Controller
         // Transaction::create($validateddata);
         return redirect('/users/myticket');
     }
+	
+	
 
-    public function myticket()
-    {
+    public function myticket(){
         $data = Transaction::all();
         return  view('admin.myticket', compact('data'), [
             'myticket' => $data = Transaction::where('users_id', Auth::users()->id)->get(),
             'title' => "My Ticket",
         ]);
     }
-    public function edit_transactions(Request $request, $id)
-    {
+    public function edit_transactions(Request $request, $id){
         $data = Playstations::find($id);
-
         return view('admin.edit_transactions', compact('data'), [
             "title" => "Edit"
         ]);
     }
-    public function destroy_transactions($id)
-    {
+    public function destroy_transactions($id){
         $data = Transaction::find($id);
         $data->delete();
         return redirect('/transactions')->with('success', 'Data Berhasil Di Hapus');
     }
-	
-	public function index_feedback()
-    {
+	public function index_feedback(){
         $data = Feedback::all();
         // dd($data);
         return view('admin.index_feedback', compact('data'), [
             "title" => "Feedback"
         ]);
     }
-    public function create_feedback()
-    {
+    public function create_feedback(){
         return view('admin.contactus', [
             "title" => "Feedback"
         ]);
     }
-    public function store_feedback(Request $request)
-    {
+    public function store_feedback(Request $request){
         $feedback = new Feedback;
         $feedback->users_id = Auth::users()->id;
         $feedback->reason = $request->reason;
@@ -318,15 +284,17 @@ class ExtendsController extends Controller
         return redirect('/');
     }
 	
-	public function onetoone(){
+	
+	
+	public function onetooneUsers(){
     	$users = Users::all();
     	return view('done.onetoone', ['users' => $users]);
     }
-	public function onetomany(){
+	public function onetomanyUsers(){
 		$users = Users::all();
 		return view('done.onetomany',['users' => $users]);
 	   }
-	public function manytomany(){
+	public function manytomanyUsers(){
 		$users = Users::get();
 		return view('done.manytomany',['users' => $users]);
 	}
@@ -369,12 +337,10 @@ class ExtendsController extends Controller
 		dd($data);
 		//echo $data[0]->name; //akses sub
 	 }
-    public function products_create() //create resource
-    {
+    public function products_create() { //create resource
         return view('admin.products');
     }
-    public function products_store(Request $request)
-    {
+    public function products_store(Request $request){
 		$data = [
 			'name' => $request->product_name,
 			'stock' => $request->stock,
@@ -422,6 +388,8 @@ class ExtendsController extends Controller
 		//}
 	}
 	
+	
+	
 	public function employee_view($id) {
 		return view('done.uts',['employee' => $id]);
 	}
@@ -433,6 +401,8 @@ class ExtendsController extends Controller
 		return redirect('/employee/view_employee');
     	return view('done.uts',['employee' => $id]); 
 	}
+
+
 
     public function suppliers_edit1(){
 		$data = [
@@ -514,21 +484,15 @@ class ExtendsController extends Controller
 
 		$proses = $data->save();
 	}
-	public function suppliers_array(){
-		$data = array();
-		//foreeach (Suppliers::all() as $key) {
-		//	$data[$key->suppliers_id] = $key->name;
-		//}
-	}
-	public function onetoone(){
+	public function onetooneSuppliers(){
     	$suppliers = Suppliers::all();
     	return view('done.onetoone', ['suppliers' => $suppliers]);
     }
-	public function onetomany(){
+	public function onetomanySuppliers(){
 		$suppliers = Suppliers::all();
 		return view('done.onetomany',['suppliers' => $suppliers]);
 	   }
-	public function manytomany(){
+	public function manytomanySuppliers(){
 		$suppliers = Suppliers::get();
 		return view('done.manytomany',['suppliers' => $suppliers]);
 	}
@@ -564,8 +528,7 @@ class ExtendsController extends Controller
 		dd($data);
 		//echo $data[0]->name; //akses sub
 	 }
-    public function purchase_create() //create resource
-    {
+    public function purchase_create() { //create resource
         return view('admin.purchase');
     }
     public function purchase_store(Request $request)
@@ -605,11 +568,5 @@ class ExtendsController extends Controller
 		$data->comment = $request->comment;
 
 		$proses = $data->save();
-	}
-	public function purchase_array(){
-		$data_purchase = array();
-		//foreeach (Purchase::all() as $key) {
-		//	$data_purchase[$key->purchase_id] = $key->name;
-		//}
 	}
 }

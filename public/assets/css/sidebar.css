@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+    /*
+    * Sidebar
+    */
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        /* rtl:raw:
+        right: 0;
+        */
+        bottom: 0;
+        /* rtl:remove */
+        left: 0;
+        z-index: 100; /* Behind the navbar */
+        padding: 48px 0 0; /* Height of navbar */
+        background-color: #001d3d;
+        box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 767.98px) {
+        .sidebar {
+        top: 1rem;
+        height: 500px;
+        }
+        .nav{
+            margin-top: 60px;
+        }
+        .card{
+            margin: auto;
+            top: 20px;
+            bottom: 50px;
+            margin-bottom: 40px;
+
+        }
+        .navbar-brand {
+            margin-left: 120px;
+        }
+
+
+    }
+    @media (max-width: 575.98px) {
+        .sidebar {
+        top: 1rem;
+        height: 500px;
+        }
+        .nav{
+            margin-top: 60px;
+        }
+        .card{
+            margin: auto;
+            top: 20px;
+            bottom: 50px;
+            margin-bottom: 40px;
+
+        }
+        .navbar-brand {
+            margin-left: 80px;
+        }
+
+
+    }
+
+    .sidebar-sticky {
+        position: relative;
+        top: 0;
+        height: calc(100vh - 48px);
+        padding-top: .5rem;
+        overflow-x: hidden;
+        overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    }
+
+    .sidebar .nav-link {
+        font-weight: 500;
+        color: rgb(255, 255, 255);
+    }
+
+    .sidebar .nav-link .feather {
+        margin-right: 4px;
+        color: #ffffff;
+    }
+
+    .sidebar .nav-link:hover{
+        list-style: none;
+        height: 100%;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 90%;
+        margin-left: 10px;
+        border-radius: 15px;
+        text-decoration: none;
+        color: #061524;
+        background-color:#f5f5f5;
+    }
+
+
+    .sidebar-heading {
+        font-size: .75rem;
+        text-transform: uppercase;
+    }
+    .hr1 {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 1em 0;
+        padding: 0;
+        /* margin-top: 200px; */
+    }
+    /*
+    * Navbar
+    */
+    .navbar{
+        background-color: #001d3d;
+    }
+
+    .navbar-brand {
+        padding-top: .75rem;
+        padding-bottom: 10px;
+        font-size: 25px;
+    }
+
+    .navbar .navbar-toggler {
+        top: 12px;
+        right: 15px;
+    }
+
