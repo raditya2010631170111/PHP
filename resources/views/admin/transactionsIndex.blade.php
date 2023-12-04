@@ -1,5 +1,4 @@
 @extends('layouts.sidebar')
-
 @section('content')
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
@@ -26,7 +25,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Users ID</th>
-                <th scope="col">Playstations ID</th>
+                <th scope="col">Products ID</th>
                 <th scope="col">Rental Date</th>
                 <th scope="col">Return Date</th>
                 <th scope="col">Actual Return Date</th>
@@ -40,15 +39,14 @@
                 <tr>
                     <th>{{ $no++ }}</th>
                     <th>{{ $row->users_id }}</th>
-                    <th>{{ $row->playstations_id }}</th>
+                    <th>{{ $row->products_id }}</th>
                     <th>{{ $row->rental_date }}</th>
                     <th>{{ $row->return_date }}</th>
                     <th>{{ $row->actual_return_date }}</th>
                     <td>{{ $row->created_at }}</td>
                     <td>
                         <div class="btn-group-vertical" role="group" aria-label="Basic mixed styles example">
-                            <a href="/transactions/delete/{{ $row->id }}" type="button" class="btn btn-danger"><i
-                                    class="bi bi-trash"></i></a>
+                            <a href="/transactions/delete/{{ $row->id }}" type="button" class="btn btn-danger"><iclass="bi bi-trash"></i></a>
                         </div>
                     </td>
                 </tr>

@@ -39,7 +39,7 @@
                     <div class="row">
                         <div class="col-8">
                             <h3>User</h3>
-                            <h4>{{ $user }}</h4>
+                            <h4>{{ $users }}</h4>
                             <a href="/user" style="text-decoration: none; color:#001d3d;">See More</a>
                         </div>
                         <div class="col-4">
@@ -56,7 +56,7 @@
                     <div class="row">
                         <div class="col-8">
                             <h3>Transaction</h3>
-                            <h4>{{ $transaction }}</h4>
+                            <h4>{{ $transactions }}</h4>
                             <a href="/transaction" style="text-decoration: none; color:#001d3d;">See More</a>
                         </div>
                         <div class="col-4">
@@ -92,7 +92,7 @@
 
                 <tbody>
                     @php $no=1; @endphp
-                    @foreach ($datauser as $row)
+                    @foreach ($datausers as $row)
                         <tr>
                             <th>{{ $no++ }}</th>
                             <td>{{ $row->name }}</td>

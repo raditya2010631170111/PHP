@@ -11,8 +11,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
                         <div class="flex-none">
-                            <img src="{{ asset('/assets/img/posterfilm/' . $movie->poster) }}" alt="poster"
-                                class="w-64 lg:w-100" width="300px">
+                            <img src="{{ asset('/assets/img/posterfilm/' . $movie->poster) }}" alt="poster"class="w-64 lg:w-100" width="300px">
                         </div>
                     </div>
                     <div class="col-lg-8 col-md-6">

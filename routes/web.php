@@ -65,16 +65,16 @@ Route::group(['middleware' => ['auth', 'ceklevel:Customer']], function () {
 
 
 Route::group(['prefix' => 'users'], function () {
-	Route::get('/', [ExtendsController::class, 'index_user']);
-	Route::get('/create', [ExtendsController::class, 'create_user']);
-	Route::post('/create', [ExtendsController::class, 'store_user']);
-	Route::get('/edit/{id}', [ExtendsController::class, 'edit_user']);
-	Route::post('/edit/{id}', [ExtendsController::class, 'update_user']);
-	Route::get('/delete/{id}', [ExtendsController::class, 'destroy_user']);
+	Route::get('/', [ExtendsController::class, 'usersIndex']);
+	Route::get('/create', [ExtendsController::class, 'usersCreate']);
+	Route::post('/create', [ExtendsController::class, 'usersStore']);
+	Route::get('/edit/{id}', [ExtendsController::class, 'usersEdit']);
+	Route::post('/edit/{id}', [ExtendsController::class, 'usersUpdate']);
+	Route::get('/delete/{id}', [ExtendsController::class, 'usersDestroy']);
 	Route::get('/myticket', [ExtendsController::class, 'myticket'])->name('admin.myticket'); //Myticket
-	Route::get('/onetooneUsers', [ExtendsController::class,'onetoone']);
-	Route::get('/onetomanyUsers', [ExtendsController::class,'onetomany']);
-	Route::get('/manytomanyUsers', [ExtendsController::class,'manytomany']);
+	Route::get('/onetoone', [ExtendsController::class,'onetooneUsers']);
+	Route::get('/onetomany', [ExtendsController::class,'onetomanyUsers']);
+	Route::get('/manytomany', [ExtendsController::class,'manytomanyUsers']);
 });
 Route::post('/postLogin', [ExtendsController::class, 'postLogin']);
 Route::get('/logout', [ExtendsController::class, 'logout']);
@@ -110,10 +110,10 @@ Route::get('/{playstations:title}', [ExtendsController::class, 'show'])->name('p
 
 
 Route::group(['prefix' => 'transaction'], function () {
-	Route::get('/', [ExtendsController::class, 'index_transaction']);
-	Route::get('/create', [ExtendsController::class, 'create_transaction']);
-	Route::post('/create', [ExtendsController::class, 'store_transaction']);
-	Route::get('/delete/{id}', [ExtendsController::class, 'destroy_transaction']);
+	Route::get('/', [ExtendsController::class, 'transactionsIndex']);
+	Route::get('/create', [ExtendsController::class, 'transactionsCreate']);
+	Route::post('/create', [ExtendsController::class, 'transactionsStore']);
+	Route::get('/delete/{id}', [ExtendsController::class, 'transactionsDestroy']);
 });
 Route::group(['prefix' => 'purchase'], function () {
 	Route::get('/edit1', [ExtendsController::class,'purchase_edit1']);

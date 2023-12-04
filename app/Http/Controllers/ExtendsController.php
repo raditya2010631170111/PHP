@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Queue\Console\RetryCommand;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use App\Models\Transactions;
-use App\Models\Users;
+use App\Models\User;
 use App\Models\Products;
 use App\Models\Feedback;
 use Laracasts\Flash\Flash;
@@ -21,20 +21,19 @@ class ExtendsController extends Controller{
     public function halamanadmin(){return view('dashboard');}
     public function halamancustomer(){return view('/');}
     public function index_dashboard(){
-        $playstations = DB::table('playstations')->get()->count();
+        $playstations = DB::table('products')->get()->count();
         $users = DB::table('users')->get()->count();
         $transactions = DB::table('transactions')->get()->count();
-        $datausers = Users::all();
-        $datatrans = Transaction::all();
-        // dd($users);
+        $datausers = User::all();
+        $datatrans = Transactions::all();
         return view('dashboard', compact('playstations', 'users', 'transactions', 'datausers', 'datatrans'), ["title" => "Dashboard"]);
     }
 	
 	
 	
-	public function index_users(){
-        $data = Users::all();
-        return view('admin.index_users', compact('data'), ["title" => "Users"]);
+	public function usersIndex(){
+        $data = User::all();
+        return view('admin.usersIndex', compact('data'), ["title" => "Users"]);
     }
     public function postLogin(Request $request){
         if (Auth::attempt($request->only('email', 'password'))) {
@@ -63,15 +62,13 @@ class ExtendsController extends Controller{
             'level' => 'nullable|default'
         ]);
         $validateddata['password'] = bcrypt($validateddata['password']);
-        Users::create($validateddata);
+        User::create($validateddata);
         return redirect('/login')->with('success', 'Data Berhasil Ditambahkan');
     }
-    public function create_users(){
-        return view('admin.create_users', [
-            "title" => "Create"
-        ]);
+    public function usersCreate(){
+        return view('admin.usersCreate', ["title" => "Create"]);
     }
-    public function store_users(Request $request){
+    public function usersStore(Request $request){
         $validateddata = $request->validate([
             'title' => 'required|max:255',
             'userstitle' => 'required|max:255',
@@ -80,35 +77,40 @@ class ExtendsController extends Controller{
             'level' => 'required|max:255'
         ]);
         $validateddata['password'] = bcrypt($validateddata['password']);
-        Users::create($validateddata);
+        User::create($validateddata);
         return redirect('/users')->with('success', 'Data Berhasil Ditambahkan');
     }
-    public function edit_users($id){
-        $data = Users::find($id);
-        return view('admin.edit_users', compact('data'), [
-            "title" => "Edit"
-        ]);
+    public function usersEdit($id){
+        $data = User::find($id);
+        return view('admin.usersEdit', compact('data'), ["title" => "Edit"]);
     }
-    public function update_users(Request $request, $id){
-        $data = Users::find($id);
+    public function usersUpdate(Request $request, $id){
+        $data = User::find($id);
         $data->update($request->all());
         return redirect('/users')->with('success', 'Data Berhasil Di Update');
     }
-    public function destroy_users($id){
-        $data = Users::find($id);
+    public function usersDestroy($id){
+        $data = User::find($id);
         $data->delete();
         return redirect('/users')->with('success', 'Data Berhasil Di Hapus');
     }
+	public function myticket(){
+        $data = Transactions::all();
+        return  view('admin.myticket', compact('data'), [
+            'myticket' => $data = Transactions::where('users_id', Auth::users()->id)->get(),
+            'title' => "My Ticket",
+        ]);
+    }
 	public function onetooneUsers(){
-    	$users = Users::all();
+    	$users = User::all();
     	return view('done.onetoone', ['users' => $users]);
     }
 	public function onetomanyUsers(){
-		$users = Users::all();
+		$users = User::all();
 		return view('done.onetomany',['users' => $users]);
 	   }
 	public function manytomanyUsers(){
-		$users = Users::get();
+		$users = User::get();
 		return view('done.manytomany',['users' => $users]);
 	}
 	
@@ -131,11 +133,11 @@ class ExtendsController extends Controller{
         return redirect('/playstations')->with('success', 'Task Created Successfully!');
     }
     public function show_playstations(){
-        $data = Playstations::all();
+        $data = Products::all();
         return view('admin.index_game', compact('data'), ['title' => "Movie",]);
     }
     public function edit_playstations(Request $request, $id){
-        $data = Playstations::find($id);
+        $data = Products::find($id);
         if ($request->hasFile('poster')) {
             $request->file('poster')->move('posterfilm/', $request->file('poster')->getClientOriginalName());
             $data->poster = $request->file('poster')->getClientOriginalName();
@@ -146,7 +148,7 @@ class ExtendsController extends Controller{
         ]);
     }
     public function update_playstations(Request $request, $id){
-        $data = Playstations::find($id);
+        $data = Products::find($id);
         if ($request->hasFile('poster')) {
             $request->file('poster')->move('posterfilm/', $request->file('poster')->getClientOriginalName());
             $data->poster = $request->file('poster')->getClientOriginalName();
@@ -156,12 +158,12 @@ class ExtendsController extends Controller{
         return redirect('/playstations')->with('success', 'Data Berhasil Di Update');
     }
     public function destroy_playstations($id){
-        $data = Playstations::find($id);
+        $data = Products::find($id);
         $data->delete();
         return redirect('/playstations')->with('success', 'Data Berhasil Di Hapus');
     }
 	public function productsPrint(){
-		$playstations = Playstations::all();
+		$playstations = Products::all();
 		return view('admin.productsPrint',['playstations'=>$playstations]);
 	}
 	public function productsExportXls(){
@@ -180,16 +182,16 @@ class ExtendsController extends Controller{
 	}
 	
 	public function index_game(){
-        $data = Playstations::all();
+        $data = Products::all();
         return  view('admin.index_game', compact('data'), [
-            'populers' => $data = Playstations::where('status', 'Now Playing')->get(),
-            'nows' => $data = Playstations::where('status', 'Now Playing')->get(),
-            'comings' => $data = Playstations::where('status', 'Coming Soon')->get(),
+            'populers' => $data = Products::where('status', 'Now Playing')->get(),
+            'nows' => $data = Products::where('status', 'Now Playing')->get(),
+            'comings' => $data = Products::where('status', 'Coming Soon')->get(),
             'title' => "Game",
         ]);
     }
-    public function show(Playstations $game){
-        return view('admin.show', ['game' => $game,'title' => "Game",]);
+    public function show(Products $game){
+        return view('admin.transactionsCreate', ['game' => $game,'title' => "Game",]);
     }
 	
 	
@@ -255,15 +257,16 @@ class ExtendsController extends Controller{
 	
 	
 	
-	public function index_transactions() {
-        $data = Transaction::all();
-        return view('admin.index_transactions', compact('data'), ["title" => "Transaction"]);
+	public function transactionsIndex() {
+        $data = Transactions::all();
+		dd($data);
+        return view('admin.transactionsIndex', compact('data'), ["title" => "Transactions"]);
     }
-    public function create_transactions(){
-        return view('admin.show', ["title" => "Create"]);
+    public function transactionsCreate(){
+        return view('admin.transactionsCreate', ["title" => "Create"]);
     }
-    public function store_transactions(Request $request){
-        $transactions = new Transaction;
+    public function transactionsStore(Request $request){
+        $transactions = new Transactions;
         $transactions->users_id = Auth::users()->id;
         $transactions->rental_date = $request->rental_date;
         $transactions->return_date = $request->return_date;
@@ -272,78 +275,62 @@ class ExtendsController extends Controller{
         $transactions->save();
         return redirect('/users/myticket');
     }
-	public function myticket(){
-        $data = Transaction::all();
-        return  view('admin.myticket', compact('data'), [
-            'myticket' => $data = Transaction::where('users_id', Auth::users()->id)->get(),
-            'title' => "My Ticket",
-        ]);
-    }
-    public function edit_transactions(Request $request, $id){
-        $data = Playstations::find($id);
-        return view('admin.edit_transactions', compact('data'), [
-            "title" => "Edit"
-        ]);
-    }
-    public function destroy_transactions($id){
-        $data = Transaction::find($id);
+    // public function transactionsEdit(Request $request, $id){$data = Products::find($id);
+        // return view('admin.transactionsEdit', compact('data'), ["title" => "Edit"]);}
+    public function transactionsDestroy($id){
+        $data = Transactions::find($id);
         $data->delete();
         return redirect('/transactions')->with('success', 'Data Berhasil Di Hapus');
     }
 	public function purchase_edit1(){$data = ['products_id' => 01,'suppliers_id' => 01,'stock' => 100,'comment' => 'barang pertama kali'];
-		$proses = Transaction::create($data);
+		$proses = Transactions::create($data);
         return redirect('/');
 	}
 	public function purchase_delete($id){
-		$proses = Transaction::where('purchase_id',$id)->delete();
-		if($proses){
-			echo 'data berhasil dihapus';
-		}
+		$proses = Transactions::where('purchase_id',$id)->delete();
+		if($proses){echo 'data berhasil dihapus';}
 	}
 	public function purchase_update1($id){
 		$data = ['products_id' => 01,'suppliers_id' => 01,'stock' => 1000,'comment' => 'barang pertama kali'];
-		$proses = Transaction::find($id)->update($data);
+		$proses = Transactions::find($id)->update($data);
         return redirect('/');
   	}
     public function purchase_create() { //create resource
         return view('admin.purchase');
     }
-    public function purchase_store(Request $request)
-    {
+    public function purchase_store(Request $request){
 		$data = [
 			'products_id' => $request->products_id,
 			'suppliers_id' => $request->suppliers_id,
 			'stock' => $request->stock,
 			'comment' => $request->comment,
 		];
-		$proses = Transaction::create($data);
+		$proses = Transactions::create($data);
 		if($proses){
 			echo "<script>alert('data berhasil disimpan');</script>";
 		}else echo "<script>alert('data gagal disimpan');</script>";
         return redirect('/');
     }
 	public function purchase_recyclebin(){
-		$data = Transaction::all();
+		$data = Transactions::all();
 		return view('admin.purchase_list',compact('data'));
 	}
 	public function purchase_recycle($id){
-		$proses = Transaction::where('purchase_id', $id)->delete();
+		$proses = Transactions::where('purchase_id', $id)->delete();
 		if($proses) flash('Data Berhasil Hapus')->success();
 		if(!$proses) flash('Data Gagal Hapus')->error();
 		return redirect('/zpurchase/recyclebin');
 	}
 	public function purchase_edit($id){
-		$data= Transaction::where('purchase_id',$id)->get();
+		$data= Transactions::where('purchase_id',$id)->get();
 		return view('admin.purchase_edit',compact('data'));
 	}
 	public function purchase_update2(Request $request, $id){
-		$data = Transaction::find($id);
-
+		$data = Transactions::find($id);
 		$data->products_id = $request->products_id;
 		$data->suppliers_id = $request->suppliers_id;
 		$data->stock = $request->stock;
 		$data->comment = $request->comment;
-
 		$proses = $data->save();
 	}
 	

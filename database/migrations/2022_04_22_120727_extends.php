@@ -6,8 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    public function up()
-    {
+    public function up(){
         Schema::create('products', function (Blueprint $table) {
             $table->id(); //$table->increments('products_id');
             // $table->enum('name', ['PS1', 'PS2', 'PS3', 'PS4', 'PS5']);
@@ -41,7 +40,7 @@ return new class extends Migration
 			$table->foreignId('products_id')->constrained('products', 'id')->onDelete('CASCADE')->onUpdate('CASCADE');//$table->integer('playstations_id');
 			$table->foreignId('users_id')->constrained('users', 'id')->onDelete('CASCADE')->onUpdate('CASCADE');//$table->integer('users_id');
 			$table->integer('suppliers_id');
-            $table->integer('stock');
+            $table->integer('stock'); //->constrained('stock', 'id')->onDelete('CASCADE')->onUpdate('CASCADE');//$table->integer('playstations_id');
 			$table->date('rental_date');
 			$table->date('return_date');
 			$table->date('actual_return_date');
