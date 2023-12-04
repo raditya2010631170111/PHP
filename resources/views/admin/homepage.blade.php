@@ -36,9 +36,14 @@
                 <div>
                   Table Playstations | 
                   <a href="/playstations/create" class="btn btn-sm btn-primary">Form</a>
-                  <a href="/playstations/edit/2" class="btn btn-sm btn-primary">Edit</a>
                   <a href="/playstations/delete" class="btn btn-sm btn-primary">Recycle Bin</a>
+                  <a href="/playstations" class="btn btn-sm btn-primary">View</a>
 				  <a href="/playstations/playstations" class="btn btn-sm btn-primary">Export Import</a>
+                </div>
+                <div>
+                  Table Products | 
+                  <a href="/products/create" class="btn btn-sm btn-primary">Form</a>
+                  <a href="/products/recyclebin" class="btn btn-sm btn-primary">Recycle Bin</a>
                 </div>
                 <div>
 				  Table Users |
@@ -54,41 +59,21 @@
                   <a href="/transaction/delete" class="btn btn-sm btn-primary">Recycle Bin</a>
 				  <a href="/transaction/transaction" class="btn btn-sm btn-primary">Export Import</a>
                 </div>
-                <div><div>
-                  Table Products | 
-                  <a href="/products/create" class="btn btn-sm btn-primary">Form</a>
-                  <a href="/products/edit1" class="btn btn-sm btn-primary">Edit</a>
-                  <a href="/products/update/2" class="btn btn-sm btn-primary">Update</a>
-                  <a href="/products/view" class="btn btn-sm btn-primary">View</a>
-                  <a href="/products/recyclebin" class="btn btn-sm btn-primary">Recycle Bin</a>
+				<div>
+                  Table Purchase | 
+                  <a href="/purchase/create" class="btn btn-sm btn-primary">Form</a>
+                  <a href="/purchase/recyclebin" class="btn btn-sm btn-primary">Recycle Bin</a>
                 </div>
                 <div>
 				  Table Suppliers |
                   <a href="/suppliers/create" class="btn btn-sm btn-primary">Form</a>
-                  <a href="/suppliers/edit1" class="btn btn-sm btn-primary">Edit</a>
-                  <a href="/products/update/2" class="btn btn-sm btn-primary">Update</a>
-                  <a href="/suppliers/view" class="btn btn-sm btn-primary">View</a>
                   <a href="/suppliers/recyclebin" class="btn btn-sm btn-primary">Recycle Bin</a>
                 </div>
 				<div>
-                  Table Purchase | 
-                  <a href="/purchase/create" class="btn btn-sm btn-primary">Form</a>
-                  <a href="/purchase/edit1" class="btn btn-sm btn-primary">Edit</a>
-                  <a href="/purchase/update/2" class="btn btn-sm btn-primary">Update</a>
-                  <a href="/purchase/view" class="btn btn-sm btn-primary">View</a>
-                  <a href="/purchase/recyclebin" class="btn btn-sm btn-primary">Recycle Bin</a>
-                </div>
                   Pagination |
                   <a href="/users/onetoone" class="btn btn-sm btn-primary">One to One</a>
                   <a href="/users/onetomany" class="btn btn-sm btn-primary">One to Many</a>
                   <a href="/users/manytomany" class="btn btn-sm btn-primary">Many to Many</a>
-                </div>
-                <div>
-				  Database |
-                  <a href="http://127.0.0.1/phpmyadmin/index.php?route=/database/structure&db=kuliah_web_fw"class="btn btn-sm btn-primary">Database</a>
-                  <a href="http://127.0.0.1/phpmyadmin/index.php?route=/sql&db=kuliah_web_fw&table=playstations&pos=0"class="btn btn-sm btn-primary">Playstations</a>
-                  <a href="http://127.0.0.1/phpmyadmin/index.php?route=/sql&pos=0&db=kuliah_web_fw&table=purchases"class="btn btn-sm btn-primary">Users</a>
-                  <a href="http://127.0.0.1/phpmyadmin/index.php?route=/sql&pos=0&db=kuliah_web_fw&table=users"class="btn btn-sm btn-primary">Purchases</a>
                 </div>
 				<!-- <div>
 				  UTS !

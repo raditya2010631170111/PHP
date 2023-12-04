@@ -10,9 +10,10 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id(); //$table->increments('products_id');
-            $table->enum('name', ['PS1', 'PS2', 'PS3', 'PS4', 'PS5']);
+            // $table->enum('name', ['PS1', 'PS2', 'PS3', 'PS4', 'PS5']);
+			$table->string('name');
             $table->string('gambar')->nullable();
-            $table->string('brand');
+            $table->string('brand')->nullable();
             $table->double('buy_price');
             $table->integer('sale_price');
             $table->text('comment'); //tata_tertib
@@ -20,7 +21,7 @@ return new class extends Migration
             $table->timestamps();
         });
         Schema::table('products', function (Blueprint $table) {
-            $table->integer('stock')->after('name');
+            $table->integer('stock')->nullable()->after('name');
         });
 		Schema::create('users', function (Blueprint $table) {
             $table->id();
@@ -81,9 +82,17 @@ return new class extends Migration
     }
     public function down()
     {
+		//drop constraint first
+		Schema::table('transactions', function (Blueprint $table) {
+            $table->dropForeign(['products_id']);
+            $table->dropForeign(['users_id']);
+        });
+        Schema::table('feedback', function (Blueprint $table) {
+            $table->dropForeign(['users_id']);
+        });
+		Schema::dropIfExists('products');
         Schema::dropIfExists('transaction');
         Schema::dropIfExists('feedback');
-		Schema::dropIfExists('products');
         // Schema::table('products', function (Blueprint $table) {$table->drop('stock');});
         Schema::dropIfExists('employee');
         Schema::dropIfExists('suppliers');

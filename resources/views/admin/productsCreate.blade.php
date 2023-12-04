@@ -11,7 +11,7 @@
                 <form action="/playstations/create" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-floating mb-4">
-                        <select name="title" id="title" class="form-select"
+                        <select name="name" id="name" class="form-select"
                             aria-label="Floating label select">
                             <option selected>-- Select --</option>
                             <option value="PS1">PS1</option>
@@ -20,25 +20,29 @@
                             <option value="PS4">PS4</option>
                             <option value="PS5">PS5</option>
                         </select>
-                        <label for="title" class="form-label">Name Playstations</label>
-                    </div>
-                    <div class="mb-4">
-                        <label for="gambar" class="form-label">Gambar</label><br>
-                        <input type="file" name="gambar" id="gambar" class="form-control" placeholder="gambar">
+                        <label for="name" class="form-label">Product Name</label>
                     </div>
 					<div class="form-floating mb-4">
-                        <input type="text" name="rental_price" id="rental_price" class="form-control" placeholder="rental_price">
-                        <label for="rental_price" class="form-label">Rental Price</label>
+                        <input type="text" name="stock" id="stock" class="form-control" placeholder="Stock">
+                        <label for="stock" class="form-label">Stock</label>
+                    </div>
+                    <div class="mb-4">
+                        <label for="brand" class="form-label">Gambar</label><br>
+                        <input type="file" name="brand" id="brand" class="form-control" placeholder="Brand">
+                    </div>
+					<div class="form-floating mb-4">
+                        <input type="text" name="buy_price" id="buy_price" class="form-control" placeholder="rental_price">
+                        <label for="buy_price" class="form-label">Rental Price</label>
                     </div>
                     <div class="form-floating mb-4">
-                        <input type="text" name="denda" id="denda" class="form-control" placeholder="denda">
-                        <label for="denda" class="form-label">Denda</label>
+                        <input type="text" name="sale_price" id="sale_price" class="form-control" placeholder="denda">
+                        <label for="sale_price" class="form-label">Denda</label>
                     </div>
 					<div class="form-floating mb-2">
-                        <textarea class="form-control" placeholder="tata_tertib" name="tata_tertib" id="tata_tertib" style="height: 100px"></textarea>
-                        <label for="tata_tertib">Tata Tertib</label>
+                        <textarea class="form-control" placeholder="comment" name="comment" id="comment" style="height: 100px"></textarea>
+                        <label for="comment">Tata Tertib</label>
                     </div>
-                    <input type="submit" value="Tambah" name="tambah" class="btn btn-primary">
+                    <input type="submit" value="Submit" name="submit" class="btn btn-primary">
                 </form>
             </div>
         </div>
