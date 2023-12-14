@@ -3,63 +3,35 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExtendsController;
 
-Route::get('/playstations', function () {
-    return view('admin.index_playstations', [
-        "title" => "Playstations"
-    ]);
+Route::get('/products', function () {
+    return view('admin.productsIndex', ["title" => "Products"]);
 });
-
 Route::get('/feedback/info', function () {
-    return view('feedback.index_feedback', [
-        "title" => "Feedback"
-    ]);
+    return view('admin.feedbackIndex', ["title" => "Feedback"]);
 });
-
 Route::get('/contactus', function () {
-    return view('feedback.contactus', [
-        "title" => "Contact us"
-    ]);
+    return view('admin.feedbackContactus', ["title" => "Contact us"]);
 });
-
 Route::get('/about', function () {
-    return view('aboutus', [
-        "title" => "About us"
-    ]);
+    return view('aboutus', ["title" => "About us"]);
 });
-
 Route::get('/login', function () {
-    return view('admin.login', [
-        "title" => "Login"
-    ]);
+    return view('admin.login', ["title" => "Login"]);
 })->name('login');
-
 Route::get('/signup', function () {
-    return view('admin.signup', [
-        "title" => "Signup"
-    ]);
+    return view('admin.signup', ["title" => "Signup"]);
 });
-
 Route::group(['middleware' => ['auth', 'ceklevel:Admin']], function () {
-
     Route::get('/dashboard', function () {
-        return view('dashboard', [
-            "title" => "Dashboard"
-        ]);
+        return view('dashboard', ["title" => "Dashboard"]);
     });
 });
-
 Route::group(['middleware' => ['auth', 'ceklevel:Customer']], function () {
-
     Route::get('/', function () {
-        return view('admin.index_game', [
-            "title" => "Movies"
-        ]);
+        return view('admin.ordersIndex', ["title" => "Orders"]);
     });
-
     Route::get('/transaction', function () {
-        return view('admin.show', [
-            "title" => "Transaction"
-        ]);
+        return view('admin.transactionsCreate', ["title" => "Transaction"]);
     });
 });
 
@@ -81,51 +53,32 @@ Route::get('/logout', [ExtendsController::class, 'logout']);
 Route::get('/regis', [ExtendsController::class, 'regis']);
 Route::post('/regis', [ExtendsController::class, 'postRegis']);
 
-Route::group(['prefix' => 'playstations'], function () {
+Route::group(['prefix' => 'products'], function () {
 	Route::get('/', [ExtendsController::class, 'productsIndex']);
 	Route::get('/create', [ExtendsController::class, 'productsCreate']);
 	Route::post('/create', [ExtendsController::class, 'productsStore']);
-	Route::get('/edit/{id}', [ExtendsController::class, 'edit_playstations']);
-	Route::post('/edit/{id}', [ExtendsController::class, 'update_playstations']);
-	Route::get('/delete/{id}', [ExtendsController::class, 'destroy_playstations']);
-	Route::get('/playstations', [ExtendsController::class,'productPrint']);
+	Route::get('/edit/{id}', [ExtendsController::class, 'productsEdit']);
+	Route::post('/edit/{id}', [ExtendsController::class, 'productsUpdate']);
+	Route::get('/delete/{id}', [ExtendsController::class, 'productsDestroy']);
+	Route::get('/products', [ExtendsController::class,'productPrint']);
 	Route::get('/export_excel', [ExtendsController::class,'productsExportXls']);
 	Route::post('/import_excel', [ExtendsController::class,'productsImportXls']);
+	Route::get('/dummyEdit', [ExtendsController::class,'productsDummyEdit']);
+	Route::get('/dummyUpdate/{id}', [ExtendsController::class,'productsDummyUpdate']);
 });
-Route::group(['prefix' => 'products'], function () {
-	Route::get('/route_cont/{id}',[ExtendsController::class,'barang']);
-	Route::get('/dummyEdit', [ExtendsController::class,'products_dummyEdit']);
-	Route::get('/dummyUpdate/{id}', [ExtendsController::class,'products_dummyUpdate']);
-	Route::get('/delete/{id}', [ExtendsController::class,'products_delete']); // 127.0.0.1:8000/products/delete/2
-	Route::get('/create', [ExtendsController::class,'products_create']);
-	Route::post('/store', [ExtendsController::class,'products_store']);
-	Route::get('/recyclebin', [ExtendsController::class,'products_recyclebin']);
-	Route::get('/recycle/{id}', [ExtendsController::class,'products_recycle']);
-	Route::get('/edit/{id}', [ExtendsController::class,'products_edit']);
-	Route::post('/{id}/update', [ExtendsController::class,'products_update2']);
-});
-Route::get('/', [ExtendsController::class, 'index_playstations'])->name('playstations.index_playstations');
-Route::get('/{playstations:title}', [ExtendsController::class, 'show'])->name('playstations.show');
+Route::get('/', [ExtendsController::class, 'productsIndex'])->name('products.productsIndex');
+Route::get('/{products:name}', [ExtendsController::class, 'show'])->name('products.transactionsCreate');
+// Route::get('/', [ExtendsController::class, 'ordersIndex']);
 
 
 
-Route::group(['prefix' => 'transaction'], function () {
+Route::group(['prefix' => 'transactions'], function () {
 	Route::get('/', [ExtendsController::class, 'transactionsIndex']);
 	Route::get('/create', [ExtendsController::class, 'transactionsCreate']);
 	Route::post('/create', [ExtendsController::class, 'transactionsStore']);
 	Route::get('/delete/{id}', [ExtendsController::class, 'transactionsDestroy']);
-});
-Route::group(['prefix' => 'purchase'], function () {
-	Route::get('/edit1', [ExtendsController::class,'purchase_edit1']);
-	Route::get('/delete/{id}', [ExtendsController::class,'purchase_delete']);
-	Route::get('/update/{id}', [ExtendsController::class,'purchase_update1']);
-	Route::get('/view', [ExtendsController::class,'purchase_view']);
-	Route::get('/create', [ExtendsController::class,'purchase_create']);
-	Route::post('/store', [ExtendsController::class,'purchase_store']);
-	Route::get('/recyclebin', [ExtendsController::class,'purchase_recyclebin']);
-	Route::get('/recycle/{id}', [ExtendsController::class,'purchase_recycle']);
-	Route::get('/edit/{id}', [ExtendsController::class,'purchase_edit']);
-	Route::get('/{id}/update', [ExtendsController::class,'purchase_update2']);
+	Route::get('/dummyEdit', [ExtendsController::class,'purchaseDummyEdit']);
+	Route::get('/dummyUpdate/{id}', [ExtendsController::class,'purchaseDummyUpdate']);
 });
 
 

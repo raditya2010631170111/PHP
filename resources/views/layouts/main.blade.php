@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,15 +11,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="{!! asset('assets/css/main.css') !!}">
     {{-- <link rel="stylesheet" type="text/css" href="{!! asset('assets/css/seat.css') !!}"> --}}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.min.css">
     <style>
         .navbar .container {
             background-color: #001d3d;
         }
-
         #box-shadow {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
-
         span.certification {
             display: inline-flex;
             white-space: nowrap;
@@ -51,7 +51,7 @@
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link mt-1 {{ $title === 'Movie' ? 'active' : '' }}"
-                            href="{{ route('admin.index_game') }}">Movie</a>
+                            href="{{ route('admin.ordersIndex') }}">Orders</a>
                     </li>
 
                     <li class="nav-item">
@@ -96,8 +96,8 @@
                     <h5>Menu</h5>
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2">
-                            <a href="{{ route('admin.index_game') }}" class="nav-link1 p-0 text-dark"
-                                style="text-decoration: none">Movie</a>
+                            <a href="{{ route('admin.ordersIndex') }}" class="nav-link1 p-0 text-dark"
+                                style="text-decoration: none">Orders</a>
                         </li>
                         <li class="nav-item mb-2">
                             <a href="/about" class="nav-link1 p-0 text-dark" style="text-decoration: none">About</a>
@@ -112,16 +112,16 @@
                     <h5>Movie</h5>
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2">
-                            <a href="{{ route('admin.index_game') }}" class="nav-link1 p-0 text-dark"
-                                style="text-decoration: none">Coming Soon</a>
+                            <a href="{{ route('admin.ordersIndex') }}" class="nav-link1 p-0 text-dark"
+                                style="text-decoration: none">Dipesan</a>
                         </li>
                         <li class="nav-item mb-2">
-                            <a href="{{ route('admin.index_game') }}" class="nav-link1 p-0 text-dark"
-                                style="text-decoration: none">Now Playing</a>
+                            <a href="{{ route('admin.ordersIndex') }}" class="nav-link1 p-0 text-dark"
+                                style="text-decoration: none">Dikirim</a>
                         </li>
                         <li class="nav-item mb-2">
-                            <a href="{{ route('admin.index_game') }}" class="nav-link1 p-0 text-dark"
-                                style="text-decoration: none">Popular</a>
+                            <a href="{{ route('admin.ordersIndex') }}" class="nav-link1 p-0 text-dark"
+                                style="text-decoration: none">Diterima</a>
                         </li>
                     </ul>
                 </div>
@@ -185,6 +185,16 @@
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
     </script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
+        });
+    </script>
     <script src="{!! asset('assets/js/script.js') !!}"></script>
     <script src="{!! asset('assets/js/transaction.js') !!}"></script>
     <script>

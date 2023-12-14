@@ -11,33 +11,33 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
                         <div class="flex-none">
-                            <img src="{{ asset('/assets/img/posterfilm/' . $movie->poster) }}" alt="poster"class="w-64 lg:w-100" width="300px">
+                            <img src="{{ asset('/assets/img/posterfilm/' . $orders->gambar) }}" alt="gambar"class="w-64 lg:w-100" width="300px">
                         </div>
                     </div>
                     <div class="col-lg-8 col-md-6">
                         <div class="md:ml-24">
-                            <h2 class="text-4xl md:mt-0 font-semibold text-white">{{ $movie->title }}</h2>
-                            <div class="flex flex-wrap items-center text-white text-sm mb-5">
+                            <h2 class="text-4xl md:mt-0 font-semibold text-white">{{ $orders->products_id }}</h2>
+                            <!--<div class="flex flex-wrap items-center text-white text-sm mb-5">
 
                                 <span class="ml-1"><i class="bi bi-star-fill" style="color: yellow"></i>
-                                    {{ $movie->rating }}</span>
+                                    {{ $orders->rating }}</span>
                                 <span class="mx-1">|</span>
-                                <span>{{ $movie->release_date }}</span>
+                                <span>{{ $orders->release_date }}</span>
                                 <span class="mx-1">|</span>
-                                <span class="certification">{{ $movie->rating_usia }}</span>
-                                <div class="mt-3">{{ $movie->genre }}</div>
+                                <span class="certification">{{ $orders->rating_usia }}</span>
+                                <div class="mt-3">{{ $orders->genre }}</div>
                             </div>
                             <div class="text-white" style="font-size: 14px">
                                 <h3>Overview</h3>
                             </div>
                             <p class="text-white mt-8 mb-3">
-                                {{ $movie->overview }}
-                            </p>
+                                {{ $orders->overview }}
+                            </p>-->
 
                             <div id="demo-modal" class="modal" role="dialog" tabindex="-1">
                                 <div class="model-inner">
                                     <div class="modal-header">
-                                        <h3 style="color: #003566;"><strong>Trailer {{ $movie->title }}</strong></h3>
+                                        <h3 style="color: #003566;"><strong>Orders {{ $orders->products_id }}</strong></h3>
                                         <button class="modal-close"
                                             style="background-color: transparent; border:0; color:#003566; font-size:30px;"
                                             data-id="demo-modal;" aria-label="Close">
@@ -48,7 +48,7 @@
                                     <div
                                         class="responsive-container overflow-hidden relative embed-responsive embed-responsive-16by9">
                                         <iframe width="560" height="315"
-                                            src="https://www.youtube.com/embed/{{ $movie->kode_film }}"
+                                            src="https://www.youtube.com/embed/{{ $orders->products_id }}"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                             allowfullscreen></iframe>
@@ -57,8 +57,7 @@
                             </div>
                             <span class="btn btn-primary">
                                 <button class="modal-open" style="background-color: transparent; border:0; color:white;"
-                                    data-id="demo-modal">Watch
-                                    Trailer</button>
+                                    data-id="demo-modal">Watch Orders</button>
                             </span>
 
                             <button type="submit" class="btn btn-warning btn-block open-button" onclick="openForm()"
@@ -71,10 +70,10 @@
                                 <form action="/transaction/create" method="POST" name="myform" class="form-container"
                                     enctype="multipart/form-data">
                                     @csrf
-                                    <h4>{{ $movie->title }}</h4>
+                                    <h4>{{ $orders->products_id }}</h4>
                                     <hr>
                                     <div>
-                                        <input type="text" name="film" id="film" value="{{ $movie->title }}" hidden>
+                                        <input type="text" name="film" id="film" value="{{ $orders->products_id }}" hidden>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-4">
@@ -336,7 +335,7 @@
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="seats text-dark p-2">
-                                                <h5 class="">{{ $movie->title }}</h5>
+                                                <h5 class="">{{ $orders->products_id }}</h5>
                                                 <hr>
                                                 {{-- Detail Pesanan --}}
                                                 <div class="form-floating mb-4 mt-3 text-dark">

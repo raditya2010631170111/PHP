@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,14 +11,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.min.css">
-    <title>Cinematix | {{ $title }}</title>
+    <title>Products | {{ $title }}</title>
     <link rel="icon" href="{!! asset('assets/img/ticket.png') !!}">
 </head>
 
 <body>
     <header class="navbar navbar-dark sticky-top flex-md-nowrap p-0 shadow" style="height: 60px">
         <a class="navbar-brand col-2 col-md-3 col-lg-2 me-0 px-3" href="#"><img src="{!! asset('assets/img/ticket.png') !!}"
-                width="32px" class="mb-1 ms-2" alt=""><b> CINEMATIC</b></a>
+                width="32px" class="mb-1 ms-2" alt=""><b> PRODUCTS</b></a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -47,9 +46,9 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/playstations">
+                        <a class="nav-link" href="/products">
                             <span><i class="me-3 bi bi-game"></i></span>
-                            Playstations
+                            Products
                         </a>
                     </li>
                     <li class="nav-item">
@@ -64,12 +63,12 @@
                             Transaction
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <!--<li class="nav-item">
                         <a class="nav-link" href="/feedback/info">
                             <span><i class="me-3 bi bi-chat-right-text-fill "></i></span>
                             Feedback
                         </a>
-                    </li>
+                    </li>-->
                     <hr class="hr1">
                     <li class="nav-item">
                         <a class="nav-link" style="font-size: 20px;" href="/logout">

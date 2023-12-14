@@ -16,13 +16,13 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-8">
-                            <h3>Playstations</h3>
+                            <h3>Products</h3>
                             <h4>{{ $playstations }}</h4>
                             <a href="/playstations" style="text-decoration: none; color:#001d3d;">See More</a>
                         </div>
 						
 						<div class="col-8">
-                            <h3>Playstations</h3>
+                            <h3>Products</h3>
                             <h4>{{ $playstations }}</h4>
                             <a href="/playstations/playstations" style="text-decoration: none; color:#001d3d;">Export Import Excel</a>
                         </div>
@@ -38,7 +38,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-8">
-                            <h3>User</h3>
+                            <h3>Users</h3>
                             <h4>{{ $users }}</h4>
                             <a href="/user" style="text-decoration: none; color:#001d3d;">See More</a>
                         </div>
@@ -55,7 +55,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-8">
-                            <h3>Transaction</h3>
+                            <h3>Transactions</h3>
                             <h4>{{ $transactions }}</h4>
                             <a href="/transaction" style="text-decoration: none; color:#001d3d;">See More</a>
                         </div>
@@ -79,7 +79,7 @@
             </svg>
             <div
                 class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">Data User</h1>
+                <h1 class="h2">Data Users</h1>
             </div>
             <table class="table">
                 <thead>
@@ -112,13 +112,13 @@
             </svg>
             <div
                 class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">Transaction</h1>
+                <h1 class="h2">Transactions</h1>
             </div>
             <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Playstations</th>
+                        <th scope="col">Movies</th>
                         <th scope="col">Jumlah Tiket</th>
                         <th scope="col">Total</th>
                     </tr>

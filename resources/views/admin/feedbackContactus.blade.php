@@ -1,5 +1,4 @@
-@extends('layouts.main3')
-
+@extends('layouts.main')
 @section('content')
     <div class="m-0 p-0 mb-5" style="background-color: white">
         <section id="con-me">

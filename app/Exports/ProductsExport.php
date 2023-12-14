@@ -2,13 +2,13 @@
 
 namespace App\Exports;
 
-use App\Models\Playstations;
+use App\Models\Products;
 use Maatwebsite\Excel\Concerns\FromCollection;
 
-class PlaystationsExport implements FromCollection
+class ProductsExport implements FromCollection
 {
     public function collection()
     {
-        return Playstations::all();
+        return Products::all();
     }
 }

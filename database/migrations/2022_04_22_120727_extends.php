@@ -4,23 +4,30 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration{
     public function up(){
         Schema::create('products', function (Blueprint $table) {
             $table->id(); //$table->increments('products_id');
             // $table->enum('name', ['PS1', 'PS2', 'PS3', 'PS4', 'PS5']);
 			$table->string('name');
-            $table->string('gambar')->nullable();
-            $table->string('brand')->nullable();
             $table->double('buy_price');
             $table->integer('sale_price');
             $table->text('comment'); //tata_tertib
+            $table->string('gambar')->nullable();
 			$table->timestamp('deleted_at')->nullable();
             $table->timestamps();
         });
         Schema::table('products', function (Blueprint $table) {
             $table->integer('stock')->nullable()->after('name');
+        });
+        Schema::create('orders', function (Blueprint $table) {
+            $table->id();
+			$table->foreignId('products_id')->constrained('products', 'id')->onDelete('CASCADE')->onUpdate('CASCADE');
+			$table->string('gambar');
+            $table->enum('status', ['Dipesan', 'Dikirim', 'Diterima']);
+            $table->enum('category', ['Standard', 'Free Ongkir', 'Flash Sale']);
+			$table->timestamp('deleted_at')->nullable();
+            $table->timestamps();
         });
 		Schema::create('users', function (Blueprint $table) {
             $table->id();
@@ -39,11 +46,11 @@ return new class extends Migration
             $table->id();
 			$table->foreignId('products_id')->constrained('products', 'id')->onDelete('CASCADE')->onUpdate('CASCADE');//$table->integer('playstations_id');
 			$table->foreignId('users_id')->constrained('users', 'id')->onDelete('CASCADE')->onUpdate('CASCADE');//$table->integer('users_id');
-			$table->integer('suppliers_id');
+			//$table->integer('suppliers_id');
             $table->integer('stock'); //->constrained('stock', 'id')->onDelete('CASCADE')->onUpdate('CASCADE');//$table->integer('playstations_id');
-			$table->date('rental_date');
-			$table->date('return_date');
-			$table->date('actual_return_date');
+			//$table->date('rental_date');
+			//$table->date('return_date');
+			//$table->date('actual_return_date');
             $table->text('comment');
 			$table->timestamp('deleted_at')->nullable();
             $table->timestamps();
@@ -79,9 +86,7 @@ return new class extends Migration
             $table->timestamps();
         });
     }
-    public function down()
-    {
-		//drop constraint first
+    public function down(){ //drop constraint first
 		Schema::table('transactions', function (Blueprint $table) {
             $table->dropForeign(['products_id']);
             $table->dropForeign(['users_id']);

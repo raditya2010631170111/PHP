@@ -34,16 +34,9 @@
               <div class="home-tab">
               <div class="card-body">
                 <div>
-                  Table Playstations | 
-                  <a href="/playstations/create" class="btn btn-sm btn-primary">Form</a>
-                  <a href="/playstations/delete" class="btn btn-sm btn-primary">Recycle Bin</a>
-                  <a href="/playstations" class="btn btn-sm btn-primary">View</a>
-				  <a href="/playstations/playstations" class="btn btn-sm btn-primary">Export Import</a>
-                </div>
-                <div>
                   Table Products | 
                   <a href="/products/create" class="btn btn-sm btn-primary">Form</a>
-                  <a href="/products/recyclebin" class="btn btn-sm btn-primary">Recycle Bin</a>
+                  <a href="/products" class="btn btn-sm btn-primary">View</a>
                 </div>
                 <div>
 				  Table Users |
@@ -58,11 +51,6 @@
                   <a href="/transaction/create" class="btn btn-sm btn-primary">Form</a>
                   <a href="/transaction/delete" class="btn btn-sm btn-primary">Recycle Bin</a>
 				  <a href="/transaction/transaction" class="btn btn-sm btn-primary">Export Import</a>
-                </div>
-				<div>
-                  Table Purchase | 
-                  <a href="/purchase/create" class="btn btn-sm btn-primary">Form</a>
-                  <a href="/purchase/recyclebin" class="btn btn-sm btn-primary">Recycle Bin</a>
                 </div>
                 <div>
 				  Table Suppliers |

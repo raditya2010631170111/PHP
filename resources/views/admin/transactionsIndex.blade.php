@@ -26,9 +26,9 @@
                 <th scope="col">#</th>
                 <th scope="col">Users ID</th>
                 <th scope="col">Products ID</th>
-                <th scope="col">Rental Date</th>
-                <th scope="col">Return Date</th>
-                <th scope="col">Actual Return Date</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Comment</th>
+                <!--<th scope="col">Rental Date</th>-->
                 <th scope="col">Created at</th>
                 <th scope="col">Aksi</th>
             </tr>
@@ -40,9 +40,9 @@
                     <th>{{ $no++ }}</th>
                     <th>{{ $row->users_id }}</th>
                     <th>{{ $row->products_id }}</th>
-                    <th>{{ $row->rental_date }}</th>
-                    <th>{{ $row->return_date }}</th>
-                    <th>{{ $row->actual_return_date }}</th>
+                    <th>{{ $row->stock }}</th>
+                    <th>{{ $row->comment }}</th>
+                    <!--<th>{{ $row->rental_date }}</th>-->
                     <td>{{ $row->created_at }}</td>
                     <td>
                         <div class="btn-group-vertical" role="group" aria-label="Basic mixed styles example">
