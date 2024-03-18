@@ -1,11 +1,23 @@
 <?php
-echo "<h1>Hello, PHP!</h1>";
+echo "<h1 align="center">Hello, PHP!</h1>";
+// <body bgcolor="white">
+// <hr></hr> //lines
+// <br> //enter
+// <font size="24" face="courier" color="red"></font>
+// <p></p>
+// <ol type="i" start="2"> <li></ol>
+// <ul type="square"> <ul> //default=circle
+// <dl> <dt></dt><dd></dd> </dl>
+// <a href=""><img src=".jpg"></img></a> //".com" or "file.html", target="_blank"
+//<table border="1" cellpadding='' cellspacing="" width="">
+//<th/><th/><tr/><td colspan="" rowspan="" bgcolor=""/></table>
 
 // Variables=wadah and Data Types, case-sensitive=huruf kecil, besar
 $heat = 25;      // Integer variable //echo {$heat};
 $_height2 = 1.75; // Float variable
 $noValue = null; //null
 $colors = array("red", "green", "blue"); // Array echo $colors[0];
+echo "Hi".$heat." Welcome <br> I'm".$_height2;
 
 $colors = array("Red", "Green", "Blue", "Yellow"); // Array echo $colors[0];
 foreach ($colors as $color) { //foreach L.
