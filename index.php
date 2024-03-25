@@ -12,6 +12,9 @@ echo "<h1 align="center">Hello, PHP!</h1>";
 //<table border="1" cellpadding='' cellspacing="" width="">
 //<th/><th/><tr/><td colspan="" rowspan="" bgcolor=""/></table>
 
+// input[type="text"] = remember value
+// input[type="number"] =  button to auto fill
+
 // Variables=wadah and Data Types, case-sensitive=huruf kecil, besar
 $heat = 25;      // Integer variable //echo {$heat};
 $_height2 = 1.75; // Float variable
